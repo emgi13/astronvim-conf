@@ -30,6 +30,19 @@ return {
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
+    ["<leader>m"] = {
+      function() require("nabla").popup() end,
+      desc = "Preview Math with Nabla",
+    },
+    ["<leader>uv"] = {
+      function()
+        require("nabla").toggle_virt {
+          autogen = true, -- auto-regenerate ASCII art when exiting insert mode
+          silent = true, -- silents error messages
+        }
+      end,
+      desc = "Toggle Virt using Nabla",
+    },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
