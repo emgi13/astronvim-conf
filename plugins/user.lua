@@ -21,19 +21,6 @@ return {
       { "<leader>T", "<cmd>ToDoTelescope<cr>", desc = "Open TODOs in Telescope" },
     },
   },
-  {
-    "iurimateus/luasnip-latex-snippets.nvim",
-    -- vimtex isn't required if using treesitter
-    requires = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
-    config = function()
-      -- require("luasnip-latex-snippets").setup()
-      require("luasnip-latex-snippets").setup {
-        use_treesitter = false, -- whether to use treesitter to determine if cursor is in math mode; if false, vimtex is used
-        allow_on_markdown = true, -- whether to add snippets to markdown filetype
-      }
-      require("luasnip").config.setup { enable_autosnippets = true }
-    end,
-  },
   { "jbyuki/nabla.nvim" },
   {
     "tadmccorkle/markdown.nvim",
@@ -85,6 +72,20 @@ return {
       vim.keymap.set("n", "<<", "<<<cmd>AutolistRecalculate<cr>")
       vim.keymap.set("n", "dd", "dd<cmd>AutolistRecalculate<cr>")
       vim.keymap.set("v", "d", "d<cmd>AutolistRecalculate<cr>")
+    end,
+  },
+  {
+    "iurimateus/luasnip-latex-snippets.nvim",
+    ft = { "markdown" },
+    -- vimtex isn't required if using treesitter
+    requires = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
+    config = function()
+      require("luasnip-latex-snippets").setup()
+      -- require("luasnip").config.setup { enable_autosnippets = true }
+      -- require("luasnip-latex-snippets").setup {
+      --   use_treesitter = true, -- whether to use treesitter to determine if cursor is in math mode; if false, vimtex is used
+      --   allow_on_markdown = true, -- whether to add snippets to markdown filetype
+      -- }
     end,
   },
 }

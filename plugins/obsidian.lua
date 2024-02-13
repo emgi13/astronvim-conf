@@ -3,7 +3,7 @@ return {
   -- the obsidian vault in this default config  ~/obsidian-vault
   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand':
   -- event = { "bufreadpre " .. vim.fn.expand "~" .. "/my-vault/**.md" },
-  event = { "BufReadPre  */MyVault/*.md" },
+  event = { "BufReadPre  /home/emgixiii/dev/obs-second-brain/**.md" },
   keys = {
     {
       "gf",
@@ -24,7 +24,7 @@ return {
     "nvim-telescope/telescope.nvim",
   },
   opts = {
-    dir = "/mnt/c/Users/EmGi/OneDrive/Documents/MyVault", -- specify the vault location. no need to call 'vim.fn.expand' here
+    dir = "/home/emgixiii/dev/obs_second_brain", -- specify the vault location. no need to call 'vim.fn.expand' here
     use_advanced_uri = true,
     finder = "telescope.nvim",
     mappings = {},
