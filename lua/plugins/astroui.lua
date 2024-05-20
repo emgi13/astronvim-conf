@@ -10,6 +10,7 @@ return {
   opts = {
     -- change colorscheme
     colorscheme = "catppuccin",
+    hi = "hi Normal guibg=NONE ctermbg=NONE",
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
       init = { -- this table overrides highlights in all themes
