@@ -8,10 +8,12 @@ return {
 
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.pack.astro" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.python-ruff" },
   { import = "astrocommunity.pack.typescript-all-in-one" },
+  { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.yaml" },
   -- { import = "astrocommunity.media.image-nvim" },
   { import = "astrocommunity.note-taking.obsidian-nvim" },
