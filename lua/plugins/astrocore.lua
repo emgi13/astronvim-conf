@@ -89,12 +89,14 @@ return {
         ["<leader>Ob"] = { ":ObsidianBacklinks<cr>", desc = "Backlinks" },
         ["<leader>Ot"] = { ":ObsidianTags<cr>", desc = "Find tags" },
         ["<leader>OT"] = { ":ObsidianToday<cr>", desc = "Open daily note" },
-        ["<leader>Ox"] = { ":ObsidianExtractNote<cr>", desc = "Extract note" },
-        ["<leader>Ol"] = { ":ObsidianLink<cr>", desc = "Create link" },
-        ["<leader>OL"] = { ":ObsidianLinkNew<cr>", desc = "Create new link" },
 
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+      },
+      v = {
+        ["<leader>Ol"] = { ":'<,'>ObsidianLink<cr>", desc = "Create link" },
+        ["<leader>OL"] = { ":'<,'>ObsidianLinkNew<cr>", desc = "Create new link" },
+        ["<leader>Ox"] = { ":'<,'>ObsidianExtractNote<cr>", desc = "Extract note" },
       },
       t = {
         -- setting a mapping to false will disable it
