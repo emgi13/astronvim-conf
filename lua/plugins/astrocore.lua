@@ -81,6 +81,18 @@ return {
           desc = "Toggle Virt using Nabla",
         },
         ["<leader>M"] = { ":MarkdownPreviewToggle<cr>", desc = "Toggle Markdown Preview`" },
+        ["<leader>O"] = { desc = "Obsidian<cr>" },
+        ["<leader>OO"] = { ":ObsidianOpen<cr>", desc = "Open in Obsidian" },
+        ["<leader>On"] = { ":ObsidianNew<cr>", desc = "New Note" },
+        ["<leader>Of"] = { ":ObsidianQuickSwitch<cr>", desc = "Find note" },
+        ["<leader>Og"] = { ":ObsidianFollowLink<cr>", desc = "Follow link" },
+        ["<leader>Ob"] = { ":ObsidianBacklinks<cr>", desc = "Backlinks" },
+        ["<leader>Ot"] = { ":ObsidianTags<cr>", desc = "Find tags" },
+        ["<leader>OT"] = { ":ObsidianToday<cr>", desc = "Open daily note" },
+        ["<leader>Ox"] = { ":ObsidianExtractNote<cr>", desc = "Extract note" },
+        ["<leader>Ol"] = { ":ObsidianLink<cr>", desc = "Create link" },
+        ["<leader>OL"] = { ":ObsidianLinkNew<cr>", desc = "Create new link" },
+
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
       },
