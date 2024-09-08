@@ -6,7 +6,9 @@
 return {
   "AstroNvim/astrocommunity",
 
+  { import = "astrocommunity.color.transparent-nvim" },
   { import = "astrocommunity.colorscheme.catppuccin" },
+  { import = "astrocommunity.diagnostics.lsp_lines-nvim" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.astro" },
   { import = "astrocommunity.pack.html-css" },
@@ -22,6 +24,7 @@ return {
   { import = "astrocommunity.markdown-and-latex.glow-nvim" },
   { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.editing-support.nvim-devdocs" },
+  { import = "astrocommunity.editing-support.telescope-undo-nvim" },
   { import = "astrocommunity.editing-support.chatgpt-nvim" },
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.editing-support.vim-move" },
@@ -30,4 +33,9 @@ return {
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
   { import = "astrocommunity.editing-support.hypersonic-nvim" },
   { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
+  { import = "astrocommunity.quickfix.nvim-bqf" },
+  { import = "astrocommunity.recipes.auto-session-restore" },
+  { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
+  { import = "astrocommunity.recipes.heirline-clock-statusline" },
+  { import = "astrocommunity.scrolling.satellite-nvim" },
 }
