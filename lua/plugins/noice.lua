@@ -3,7 +3,12 @@ return {
   opts = {
     lsp = {
       signature = {
-        enabled = false,
+        enabled = true,
+        view = "hover",
+      },
+      hover = {
+        enabled = true,
+        view = "hover",
       },
     },
     presets = {
