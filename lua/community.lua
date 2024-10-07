@@ -35,5 +35,4 @@ return {
   { import = "astrocommunity.quickfix.nvim-bqf" },
   { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
   { import = "astrocommunity.recipes.heirline-clock-statusline" },
-  { import = "astrocommunity.scrolling.satellite-nvim" },
 }
