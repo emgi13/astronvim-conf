@@ -25,7 +25,6 @@ return {
   { import = "astrocommunity.editing-support.nvim-devdocs" },
   { import = "astrocommunity.editing-support.telescope-undo-nvim" },
   { import = "astrocommunity.editing-support.chatgpt-nvim" },
-  { import = "astrocommunity.editing-support.cutlass-nvim" },
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.editing-support.vim-move" },
   { import = "astrocommunity.editing-support.wildfire-nvim" },
@@ -36,4 +35,5 @@ return {
   { import = "astrocommunity.quickfix.nvim-bqf" },
   { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
   { import = "astrocommunity.recipes.heirline-clock-statusline" },
+  { import = "astrocommunity.recipes.neovide" },
 }
