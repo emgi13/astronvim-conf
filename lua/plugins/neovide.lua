@@ -6,10 +6,10 @@ return {
   opts = {
     options = {
       o = {
-        guifont = "JetBrainsMono NFM:h10",
+        guifont = "JetBrainsMono NF:h10",
       },
       g = {
-        neovide_transparency = 0.8,
+        neovide_transparency = 0.9,
         neovide_theme = "dark",
         neovide_detach_on_quit = "always_quit",
         neovide_fullscreen = true,
