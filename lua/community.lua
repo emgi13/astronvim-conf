@@ -37,4 +37,6 @@ return {
   { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
   { import = "astrocommunity.recipes.heirline-clock-statusline" },
   { import = "astrocommunity.recipes.neovide" },
+  { import = "astrocommunity.completion.magazine-nvim" },
+  { import = "astrocommunity.motion.vim-matchup" },
 }
