@@ -1,35 +1,36 @@
+if not vim.g.neovide then return {} end
+
 return {
   "AstroNvim/astrocore",
+  ---@type AstroCoreOpts
   opts = {
     options = {
       o = {
-        guifont = "JetBrainsMono NFM:h10"
+        guifont = "JetBrainsMono NFM:h10",
       },
       g = {
         neovide_transparency = 0.8,
         neovide_theme = "dark",
-        neovide_detach_on_quit = 'always_quit',
+        neovide_detach_on_quit = "always_quit",
         neovide_fullscreen = true,
-        -- Set terminal colors for Catppuccin Mocha
-        terminal_color_0 = '#45475A',  -- Black
-        terminal_color_1 = '#F38BA8',  -- Red
-        terminal_color_2 = '#A6E3A1',  -- Green
-        terminal_color_3 = '#F9E2AF',  -- Yellow
-        terminal_color_4 = '#89B4FA',  -- Blue
-        terminal_color_5 = '#F5C2E7',  -- Purple
-        terminal_color_6 = '#94E2D5',  -- Cyan
-        terminal_color_7 = '#BAC2DE',  -- White
-
-        terminal_color_8 = '#585B70',   -- Bright Black
-        terminal_color_9 = '#F38BA8',   -- Bright Red
-        terminal_color_10 = '#A6E3A1',  -- Bright Green
-        terminal_color_11 = '#F9E2AF',  -- Bright Yellow
-        terminal_color_12 = '#89B4FA',  -- Bright Blue
-        terminal_color_13 = '#F5C2E7',  -- Bright Purple
-        terminal_color_14 = '#94E2D5',  -- Bright Cyan
-        terminal_color_15 = '#A6ADC8'   -- Bright White
-
-      }
-    }
-  }
+        neovide_window_blurred = true,
+      },
+    },
+    mappings = {
+      n = {
+        [""] = { ":w<CR>" },
+        [""] = { '"+P' },
+      },
+      v = {
+        [""] = { '"+y' },
+        [""] = { '"+P' },
+      },
+      c = {
+        [""] = { "<C-R>+" },
+      },
+      i = {
+        [""] = { '<ESC>l"+Pli' },
+      },
+    },
+  },
 }
