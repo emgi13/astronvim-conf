@@ -2,6 +2,11 @@ return {
   "AstroNvim/astrocore",
   opts = {
     options = {
+      o = {
+        winblend = 20,
+        pumblend = 10,
+        termguicolors = true,
+      },
       g = {
         -- Set terminal colors for Catppuccin Mocha
         terminal_color_0 = "#45475A", -- Black
