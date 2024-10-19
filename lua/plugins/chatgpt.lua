@@ -34,6 +34,7 @@ return {
         n = 1,
       },
 
+      ignore_default_actions_path = true,
       actions_paths = { "~/.config/nvim/lua/plugins/chatgpt_actions.json" },
     }
   end,

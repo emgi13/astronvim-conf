@@ -144,7 +144,7 @@ return {
   },
   {
     "iurimateus/luasnip-latex-snippets.nvim",
-    ft = { "markdown" },
+    ft = { "markdown", "markdown.mdx" },
     -- vimtex isn't required if using treesitter
     requires = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
     config = function()
