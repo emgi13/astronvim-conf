@@ -3,8 +3,8 @@ return {
   opts = {
     options = {
       o = {
-        winblend = 20,
-        pumblend = 10,
+        winblend = 5,
+        pumblend = 5,
         termguicolors = true,
       },
       g = {
