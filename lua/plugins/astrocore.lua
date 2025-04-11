@@ -33,7 +33,7 @@ return {
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
-        -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
+        -- NOTE: `mapLeader` and `maplocalLeader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
         autoformat_enabled = true, -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
         cmp_enabled = true, -- enable completion at start
@@ -67,11 +67,11 @@ return {
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         ["<Leader>b"] = { desc = "Buffers" },
-        ["<leader>m"] = {
+        ["<Leader>m"] = {
           function() require("nabla").popup() end,
           desc = "Preview Math with Nabla",
         },
-        ["<leader>uv"] = {
+        ["<Leader>uv"] = {
           function()
             require("nabla").toggle_virt {
               autogen = true, -- auto-regenerate ASCII art when exiting insert mode
@@ -80,7 +80,7 @@ return {
           end,
           desc = "Toggle Virt using Nabla",
         },
-        ["<leader>M"] = { ":MarkdownPreviewToggle<cr>", desc = "Toggle Markdown Preview`" },
+        ["<Leader>M"] = { ":MarkdownPreviewToggle<cr>", desc = "Toggle Markdown Preview`" },
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
       },
