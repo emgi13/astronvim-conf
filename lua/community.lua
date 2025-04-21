@@ -13,7 +13,6 @@ return {
   { import = "astrocommunity.editing-support.chatgpt-nvim" },
   { import = "astrocommunity.editing-support.hypersonic-nvim" },
   { import = "astrocommunity.editing-support.nvim-devdocs" },
-  { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.editing-support.telescope-undo-nvim" },
   { import = "astrocommunity.editing-support.vim-move" },
   { import = "astrocommunity.editing-support.wildfire-nvim" },
