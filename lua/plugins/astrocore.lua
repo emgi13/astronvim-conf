@@ -80,7 +80,7 @@ return {
           end,
           desc = "Toggle Virt using Nabla",
         },
-        ["<Leader>M"] = { ":MarkdownPreviewToggle<cr>", desc = "Toggle Markdown Preview`" },
+        ["<Leader>M"] = { "<cmd>MarkdownPreviewToggle<cr>", desc = "Toggle Markdown Preview" },
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
       },
