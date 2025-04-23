@@ -18,7 +18,7 @@ return {
   { import = "astrocommunity.editing-support.wildfire-nvim" },
   { import = "astrocommunity.lsp.lsp-lens-nvim" },
   { import = "astrocommunity.markdown-and-latex.glow-nvim" },
-  { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
+  { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" }, -- build the app yourseld in lazy store
   { import = "astrocommunity.markdown-and-latex.vimtex" },
   { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.motion.vim-matchup" },
