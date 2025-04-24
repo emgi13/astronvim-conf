@@ -16,6 +16,8 @@ return {
   { import = "astrocommunity.editing-support.telescope-undo-nvim" },
   { import = "astrocommunity.editing-support.vim-move" },
   { import = "astrocommunity.editing-support.wildfire-nvim" },
+  { import = "astrocommunity.game.leetcode-nvim" },
+  { import = "astrocommunity.git.diffview-nvim" },
   { import = "astrocommunity.lsp.lsp-lens-nvim" },
   { import = "astrocommunity.markdown-and-latex.glow-nvim" },
   { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" }, -- build the app yourseld in lazy store
