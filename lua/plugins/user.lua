@@ -59,13 +59,6 @@ return {
   --   end,
   -- },
   {
-    "tadmccorkle/markdown.nvim",
-    ft = "markdown", -- or 'event = "VeryLazy"'
-    opts = {
-      -- configuration here or empty for defaults
-    },
-  },
-  {
     "gaoDean/autolist.nvim",
     ft = {
       "markdown",
@@ -98,20 +91,6 @@ return {
       vim.keymap.set("n", "<<", "<<<cmd>AutolistRecalculate<cr>")
       vim.keymap.set("n", "dd", "dd<cmd>AutolistRecalculate<cr>")
       vim.keymap.set("v", "d", "d<cmd>AutolistRecalculate<cr>")
-    end,
-  },
-  {
-    "iurimateus/luasnip-latex-snippets.nvim",
-    ft = { "markdown", "markdown.mdx" },
-    -- vimtex isn't required if using treesitter
-    requires = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
-    config = function()
-      require("luasnip-latex-snippets").setup()
-      require("luasnip").config.setup { enable_autosnippets = true }
-      require("luasnip-latex-snippets").setup {
-        use_treesitter = true, -- whether to use treesitter to determine if cursor is in math mode; if false, vimtex is used
-        allow_on_markdown = true, -- whether to add snippets to markdown filetype
-      }
     end,
   },
 }
