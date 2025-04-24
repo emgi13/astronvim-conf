@@ -47,4 +47,11 @@ return {
       },
     },
   },
+  keys = {
+    {
+      "<Leader>e",
+      function() require("snacks").explorer() end,
+      desc = "Open Explorer",
+    },
+  },
 }
