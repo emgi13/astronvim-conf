@@ -67,19 +67,6 @@ return {
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         ["<Leader>b"] = { desc = "Buffers" },
-        ["<Leader>m"] = {
-          function() require("nabla").popup() end,
-          desc = "Preview Math with Nabla",
-        },
-        ["<Leader>uv"] = {
-          function()
-            require("nabla").toggle_virt {
-              autogen = true, -- auto-regenerate ASCII art when exiting insert mode
-              silent = true, -- silents error messages
-            }
-          end,
-          desc = "Toggle Virt using Nabla",
-        },
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
         -- Toggle Snacks Explorer

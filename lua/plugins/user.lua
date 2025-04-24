@@ -58,7 +58,6 @@ return {
   --     )
   --   end,
   -- },
-  { "jbyuki/nabla.nvim" },
   {
     "tadmccorkle/markdown.nvim",
     ft = "markdown", -- or 'event = "VeryLazy"'
