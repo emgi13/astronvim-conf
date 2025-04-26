@@ -1,5 +1,5 @@
 return {
-  "iurimateus/luasnip-latex-snippets.nvim",
+  "emgi13/luasnip-latex-snippets.nvim",
   ft = { "markdown", "markdown.mdx" },
   -- vimtex isn't required if using treesitter
   requires = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
