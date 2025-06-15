@@ -31,6 +31,7 @@ return {
   { import = "astrocommunity.pack.mdx" },
   { import = "astrocommunity.pack.python-ruff" },
   { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.pack.typst" },
   { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.quickfix.nvim-bqf" },
