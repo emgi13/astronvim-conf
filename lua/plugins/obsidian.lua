@@ -15,16 +15,6 @@ return {
       opts = {
         mappings = {
           n = {
-            ["gf"] = {
-              function()
-                if require("obsidian").util.cursor_on_markdown_link() then
-                  return "<Cmd>ObsidianFollowLink<CR>"
-                else
-                  return "gf"
-                end
-              end,
-              desc = "Obsidian Follow Link",
-            },
             -- Obsidian mappings
             [trigger] = { desc = "Obsidian" },
             [trigger .. "l"] = { "<Cmd>Obsidian links<CR>", desc = "Links" },
