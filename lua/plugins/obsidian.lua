@@ -52,7 +52,7 @@ return {
       },
       completion = {
         nvim_cmp = astrocore.is_available "nvim-cmp",
-        blink = astrocore.is_available "blink",
+        blink = astrocore.is_available "blink.cmp",
       },
 
       note_frontmatter_func = function(note)
