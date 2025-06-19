@@ -1,3 +1,5 @@
+local trigger = "<Leader>,"
+
 return {
   "obsidian-nvim/obsidian.nvim",
   -- the obsidian vault in this default config  ~/obsidian-vault
@@ -23,6 +25,9 @@ return {
               end,
               desc = "Obsidian Follow Link",
             },
+            -- Obsidian mappings
+            [trigger] = { desc = "Obsidian" },
+            [trigger .. "l"] = { "<Cmd>Obsidian links<CR>", desc = "Links" },
           },
         },
       },
