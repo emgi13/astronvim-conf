@@ -1,132 +1,107 @@
-return {}
--- return {
---   "epwalsh/obsidian.nvim",
---   version = "*", -- recommended, use latest release instead of latest commit
---   lazy = false,
---   ft = "markdown",
---   -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
---   -- event = {
---   --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
---   --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/*.md"
---   --   -- refer to `:h file-pattern` for more examples
---   --   "BufReadPre path/to/my-vault/*.md",
---   --   "BufNewFile path/to/my-vault/*.md",
---   -- },
---   dependencies = {
---     -- Required.
---     "nvim-lua/plenary.nvim",
---     "hrsh7th/nvim-cmp",
---     -- see below for full list of optional dependencies 👇
---   },
---   opts = {
---     workspaces = {
---       {
---         -- Digital Brain path on Google Drive
---         name = "DigitalBrain",
---         path = "/mnt/g/My Drive/DigitalBrain",
---       },
---     },
---     completion = {
---       nvim_cmp = true,
---       min_chars = 1,
---     },
---     mappings = {},
---     new_notes_location = "notes_subdir",
---     preferred_link_style = "wiki",
---     disable_frontmatter = true,
---     -- Optional, by default when you use `:ObsidianFollowLink` on a link to an external
---     -- URL it will be ignored but you can customize this behavior here.
---     ---@param url string
---     follow_url_func = function(url)
---       -- Open the URL in the default web browser.
---       -- vim.fn.jobstart { "open", url } -- Mac OS
---       vim.fn.jobstart { "wsl-open", url } -- linux
---       -- vim.cmd(':silent exec "!start ' .. url .. '"') -- Windows
---       -- vim.ui.open(url) -- need Neovim 0.10.0+
---     end,
---     -- Optional, by default when you use `:ObsidianFollowLink` on a link to an image
---     -- file it will be ignored but you can customize this behavior here.
---     ---@param img string
---     follow_img_func = function(img)
---       -- vim.fn.jobstart { "qlmanage", "-p", img } -- Mac OS quick look preview
---       vim.fn.jobstart { "wsl-open", img } -- linux
---       -- vim.cmd(':silent exec "!start ' .. url .. '"') -- Windows
---     end,
---     -- Optional, set to true to force ':ObsidianOpen' to bring the app to the foreground.
---     open_app_foreground = true,
---     -- Optional, determines how certain commands open notes. The valid options are:
---     -- 1. "current" (the default) - to always open in the current window
---     -- 2. "vsplit" - to open in a vertical split if there's not already a vertical split
---     -- 3. "hsplit" - to open in a horizontal split if there's not already a horizontal split
---     open_notes_in = "vsplit",
---     -- Optional, configure additional syntax highlighting / extmarks.
---     -- This requires you have `conceallevel` set to 1 or 2. See `:help conceallevel` for more details.
---
---     -- Optional, customize how note IDs are generated given an optional title.
---     ---@param title string|?
---     ---@return string
---     note_id_func = function(title)
---       -- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
---       -- In this case a note with the title 'My new note' will be given an ID that looks
---       -- like '1657296016-my-new-note', and therefore the file name '1657296016-my-new-note.md'
---       local suffix = ""
---       if title ~= nil then
---         -- If title is given, transform it into valid file name.
---         suffix = title
---       else
---         -- If title is nil, just add 4 random uppercase letters to the suffix.
---         for _ = 1, 4 do
---           suffix = suffix .. string.char(math.random(65, 90))
---         end
---       end
---       return tostring(os.time()) .. "-" .. suffix
---     end,
---
---     -- Optional, customize how note file names are generated given the ID, target directory, and title.
---     ---@param spec { id: string, dir: obsidian.Path, title: string|? }
---     ---@return string|obsidian.Path The full path to the new note.
---     note_path_func = function(spec)
---       -- This is equivalent to the default behavior.
---       local path = spec.dir / tostring(spec.title)
---       return path:with_suffix ".md"
---     end,
---
---     -- Optional, customize how wiki links are formatted. You can set this to one of:
---     --  * "use_alias_only", e.g. '[[Foo Bar]]'
---     --  * "prepend_note_id", e.g. '[[foo-bar|Foo Bar]]'
---     --  * "prepend_note_path", e.g. '[[foo-bar.md|Foo Bar]]'
---     --  * "use_path_only", e.g. '[[foo-bar.md]]'
---     -- Or you can set it to a function that takes a table of options and returns a string, like this:
---     wiki_link_func = "use_alias_only",
---     -- wiki_link_func = function(opts) return require("obsidian.util").wiki_link_id_prefix(opts) end,
---
---     ui = {
---       enable = false,
---     },
---     -- Specify how to handle attachments.
---     attachments = {
---       -- The default folder to place images in via `:ObsidianPasteImg`.
---       -- If this is a relative path it will be interpreted as relative to the vault root.
---       -- You can always override this per image by passing a full path to the command instead of just a filename.
---       img_folder = "files", -- This is the default
---
---       -- Optional, customize the default name or prefix when pasting images via `:ObsidianPasteImg`.
---       ---@return string
---       img_name_func = function()
---         -- Prefix image names with timestamp.
---         return string.format("%s-", os.time())
---       end,
---
---       -- A function that determines the text to insert in the note when pasting an image.
---       -- It takes two arguments, the `obsidian.Client` and an `obsidian.Path` to the image file.
---       -- This is the default implementation.
---       ---@param client obsidian.Client
---       ---@param path obsidian.Path the absolute path to the image file
---       ---@return string
---       img_text_func = function(client, path)
---         path = client:vault_relative_path(path) or path
---         return string.format("![%s](%s)", path.name, path)
---       end,
---     },
---   },
--- }
+local trigger = "<Leader>,"
+
+return {
+  "obsidian-nvim/obsidian.nvim",
+  -- the obsidian vault in this default config  ~/obsidian-vault
+  -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand':
+  -- event = { "bufreadpre " .. vim.fn.expand "~" .. "/my-vault/**.md" },
+  -- event = { "BufReadPre  /mnt/c/Obsidian/Brain/*.md" },
+
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    { "hrsh7th/nvim-cmp", optional = true },
+    {
+      "AstroNvim/astrocore",
+      opts = {
+        mappings = {
+          n = {
+            -- Obsidian mappings
+            [trigger] = { desc = "Obsidian" },
+            [trigger .. "b"] = { "<Cmd>Obsidian backlinks<CR>", desc = "Backlinks" },
+            [trigger .. "d"] = { desc = "Dailies" },
+            [trigger .. "df"] = { "<Cmd>Obsidian dailies<CR>", desc = "Find daily note" },
+            [trigger .. "dd"] = { "<Cmd>Obsidian today<CR>", desc = "Today's Note" },
+            [trigger .. "dt"] = { "<Cmd>Obsidian tomorrow<CR>", desc = "Tomorrow's Note" },
+            [trigger .. "dy"] = { "<Cmd>Obsidian yesterday<CR>", desc = "Yesterday's Note" },
+            [trigger .. "l"] = { "<Cmd>Obsidian links<CR>", desc = "Links" },
+            [trigger .. "n"] = { "<Cmd>Obsidian new<CR>", desc = "New Note" },
+            [trigger .. "N"] = { "<Cmd>Obsidian new_from_template<CR>", desc = "New Note from Template" },
+            [trigger .. "t"] = { "<Cmd>Obsidian tags<CR>", desc = "Find Tags" },
+            [trigger .. "o"] = { "<Cmd>Obsidian open<CR>", desc = "Open in Obsidian Desktop" },
+            [trigger .. "s"] = { "<Cmd>Obsidian search<CR>", desc = "Search" },
+            [trigger .. "f"] = { "<Cmd>Obsidian quick_switch<CR>", desc = "Find Note" },
+            [trigger .. "p"] = { "<Cmd>Obsidian paste_img<CR>", desc = "Paste Image" },
+            [trigger .. "r"] = { "<Cmd>Obsidian rename<CR>", desc = "Rename Note" },
+            [trigger .. "i"] = { "<Cmd>Obsidian template<CR>", desc = "Insert Template" },
+          },
+          v = {
+            [trigger .. "e"] = { "<Cmd>Obsidian extract_note<CR>", desc = "Extract Note" },
+            [trigger .. "l"] = { "<Cmd>Obsidian link<CR>", desc = "Create Link" },
+            [trigger .. "n"] = { "<Cmd>Obsidian link_new<CR>", desc = "Create Link (New)" },
+          },
+        },
+      },
+    },
+  },
+  opts = function(_, opts)
+    local astrocore = require "astrocore"
+    return astrocore.extend_tbl(opts, {
+      dir = "/mnt/c/Obsidian/Brain/", -- specify the vault location. no need to call 'vim.fn.expand' here
+      finder = (astrocore.is_available "snacks.pick" and "snacks.pick")
+        or (astrocore.is_available "telescope.nvim" and "telescope.nvim")
+        or (astrocore.is_available "fzf-lua" and "fzf-lua")
+        or (astrocore.is_available "mini.pick" and "mini.pick"),
+
+      templates = {
+        subdir = "templates",
+        date_format = "%Y-%m-%d-%a",
+        time_format = "%H:%M",
+      },
+      daily_notes = {
+        folder = "daily",
+      },
+      completion = {
+        nvim_cmp = astrocore.is_available "nvim-cmp",
+        blink = astrocore.is_available "blink.cmp",
+        min_chars = 0, -- start completion instantly, increase if slows down
+      },
+
+      note_frontmatter_func = function(note)
+        -- This is equivalent to the default frontmatter function.
+        local out = { id = note.id, aliases = note.aliases, tags = note.tags }
+        -- `note.metadata` contains any manually added fields in the frontmatter.
+        -- So here we just make sure those fields are kept in the frontmatter.
+        if note.metadata ~= nil and require("obsidian").util.table_length(note.metadata) > 0 then
+          for k, v in pairs(note.metadata) do
+            out[k] = v
+          end
+        end
+        return out
+      end,
+
+      -- Optional, customize how note IDs are generated given an optional title.
+      ---@param title string|?
+      ---@return string
+      note_id_func = function(title)
+        -- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
+        -- In this case a note with the title 'My new note' will be given an ID that looks
+        -- like '1657296016-my-new-note', and therefore the file name '1657296016-my-new-note.md'.
+        -- You may have as many periods in the note ID as you'd like—the ".md" will be added automatically
+        local suffix = ""
+        if title ~= nil then
+          -- If title is given, transform it into valid file name.
+          return title:gsub("[^A-Za-z0-9 ]", "")
+        else
+          -- If title is nil, just add 4 random uppercase letters to the suffix.
+          for _ = 1, 4 do
+            suffix = suffix .. string.char(math.random(65, 90))
+          end
+          return tostring(os.time()) .. "-" .. suffix
+        end
+      end,
+      -- Optional, by default when you use `:ObsidianFollowLink` on a link to an external
+      -- URL it will be ignored but you can customize this behavior here.
+      follow_url_func = vim.ui.open,
+    })
+  end,
+}
