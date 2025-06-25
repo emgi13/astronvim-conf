@@ -102,6 +102,9 @@ return {
       -- Optional, by default when you use `:ObsidianFollowLink` on a link to an external
       -- URL it will be ignored but you can customize this behavior here.
       follow_url_func = vim.ui.open,
+      ui = {
+        enable = false,
+      },
     })
   end,
 }
