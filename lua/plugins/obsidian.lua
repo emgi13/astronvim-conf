@@ -46,7 +46,7 @@ return {
   opts = function(_, opts)
     local astrocore = require "astrocore"
     return astrocore.extend_tbl(opts, {
-      dir = "/mnt/c/Obsidian/Brain/", -- specify the vault location. no need to call 'vim.fn.expand' here
+      dir = "~/Brain/", -- specify the vault location. no need to call 'vim.fn.expand' here
       finder = (astrocore.is_available "snacks.pick" and "snacks.pick")
         or (astrocore.is_available "telescope.nvim" and "telescope.nvim")
         or (astrocore.is_available "fzf-lua" and "fzf-lua")
@@ -104,6 +104,12 @@ return {
       follow_url_func = vim.ui.open,
       ui = {
         enable = false,
+      },
+      workspaces = {
+        {
+          name = "Brain",
+          path = "~/Brain/",
+        },
       },
     })
   end,
