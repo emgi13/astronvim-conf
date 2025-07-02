@@ -2,6 +2,7 @@ return {
   "folke/snacks.nvim",
   ---@type snacks.Config
   opts = {
+    quickfile = {},
     explorer = { enabled = true, replace_netrw = true },
     dashboard = {
       sections = {

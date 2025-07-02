@@ -1,12 +1,17 @@
 local trigger = "<Leader>,"
 
+---@type LazySpec
 return {
   "obsidian-nvim/obsidian.nvim",
   -- the obsidian vault in this default config  ~/obsidian-vault
   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand':
   -- event = { "bufreadpre " .. vim.fn.expand "~" .. "/my-vault/**.md" },
   -- event = { "BufReadPre  /mnt/c/Obsidian/Brain/*.md" },
-
+  event = {
+    "BufReadPre " .. vim.fn.expand "~" .. "/Brain",
+  },
+  keys = { trigger, desc = "Obsidian" },
+  cmd = "Obsidian",
   dependencies = {
     "nvim-lua/plenary.nvim",
     { "hrsh7th/nvim-cmp", optional = true },
