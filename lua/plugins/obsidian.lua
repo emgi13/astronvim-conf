@@ -10,7 +10,7 @@ return {
   event = {
     "BufReadPre " .. vim.fn.expand "~" .. "/Brain",
   },
-  keys = { trigger, desc = "Obsidian" },
+  keys = { { trigger, desc = "Obsidian" } },
   cmd = "Obsidian",
   dependencies = {
     "nvim-lua/plenary.nvim",
@@ -21,7 +21,6 @@ return {
         mappings = {
           n = {
             -- Obsidian mappings
-            [trigger] = { desc = "Obsidian" },
             [trigger .. "b"] = { "<Cmd>Obsidian backlinks<CR>", desc = "Backlinks" },
             [trigger .. "d"] = { desc = "Dailies" },
             [trigger .. "df"] = { "<Cmd>Obsidian dailies<CR>", desc = "Find daily note" },
