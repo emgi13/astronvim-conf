@@ -1,4 +1,4 @@
-if true then return {} end -- WARN: Remove this line to enable this file.
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 return {
   "folke/noice.nvim",

@@ -14,7 +14,6 @@ return {
   cmd = "Obsidian",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    { "hrsh7th/nvim-cmp", optional = true },
     {
       "AstroNvim/astrocore",
       opts = {
