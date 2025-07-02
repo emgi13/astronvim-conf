@@ -1,6 +1,7 @@
+---@type LazySpec
 return {
   "jackMort/ChatGPT.nvim",
-  event = "VeryLazy",
+  keys = { { "<Leader>G" } },
   config = function()
     require("chatgpt").setup {
       -- this config assumes you have OPENAI_API_KEY environment variable set
