@@ -1,9 +1,14 @@
+---@type LazySpec
 return {
   "luckasRanarison/nvim-devdocs",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope.nvim",
     "nvim-treesitter/nvim-treesitter",
+  },
+  keys = {
+    { "<Leader>fd" },
+    { "<Leader>fD" },
   },
   opts = {
     dir_path = vim.fn.stdpath "data" .. "/devdocs", -- installation directory
