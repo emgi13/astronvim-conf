@@ -1,3 +1,4 @@
+---@type LazySpec
 return {
   "folke/snacks.nvim",
   ---@type snacks.Config
@@ -42,17 +43,25 @@ return {
           "██  ██  ██████████████    ████  ████████████    ██    ██  ████  ██",
           "██  ██                  ██████  ██████████████  ████████  ████  ██",
           "██  ██████████████████████████                                  ██",
-          "██                                            EmGiXIII@EmGiCO.  ██",
+          "██                                     EmGiXIII@EmGiCO.         ██",
           "██████████████████████████████████████████████████████████████████",
         }, "\n"),
       },
     },
   },
-  keys = {
+  dependencies = {
     {
-      "<Leader>e",
-      function() require("snacks").explorer() end,
-      desc = "Open Explorer",
+      "AstroNvim/astrocore",
+      opts = {
+        mappings = {
+          n = {
+            ["<Leader>e"] = {
+              function() require("snacks").explorer() end,
+              desc = "Open Explorer",
+            },
+          },
+        },
+      },
     },
   },
 }
