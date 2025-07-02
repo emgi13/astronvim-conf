@@ -1,5 +1,7 @@
+---@type LazySpec
 return {
   "MeanderingProgrammer/render-markdown.nvim",
+  ft = { "markdown", "markdown.mdx" },
   opts = {
     latex = { enabled = false },
   },
