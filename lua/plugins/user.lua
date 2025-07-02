@@ -1,8 +1,10 @@
+if true then return {} end -- WARN: Remove line to enable file
+
 -- You can also add or configure plugins by creating files in this `plugins/` folder
 -- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEFORE ENABLING THIS FILE
 -- Here are some examples:
 
----@type LazySpec
+---@type LazySpec[]
 return {
 
   -- == Examples of Adding Plugins ==
