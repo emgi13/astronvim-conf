@@ -17,7 +17,7 @@ return {
         --         return "gpt-3.5-turbo"
         --     end
         -- end,
-        model = "gpt-4.1-mini",
+        model = "gpt-4.1-nano",
         frequency_penalty = 0,
         presence_penalty = 0,
         max_tokens = 4095,
@@ -33,8 +33,6 @@ return {
         top_p = 0.1,
         n = 1,
       },
-
-      ignore_default_actions_path = true,
     }
   end,
   dependencies = {
