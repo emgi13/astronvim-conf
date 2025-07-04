@@ -34,6 +34,7 @@ return {
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.typst" },
+  { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.quickfix.nvim-bqf" },
   { import = "astrocommunity.recipes.heirline-clock-statusline" },
