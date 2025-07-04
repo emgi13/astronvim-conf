@@ -67,7 +67,7 @@ return {
       completion = {
         nvim_cmp = astrocore.is_available "nvim-cmp",
         blink = astrocore.is_available "blink.cmp",
-        min_chars = 0, -- start completion instantly, increase if slows down
+        min_chars = 0, -- WARN: start completion instantly, increase if slows down
       },
 
       note_frontmatter_func = function(note)
