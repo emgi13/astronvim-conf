@@ -1,7 +1,6 @@
 {
   "AstroNvim": { "branch": "main", "commit": "9417da143b971e65b159089c3de5a0ee37edb1fd" },
   "ChatGPT.nvim": { "branch": "main", "commit": "5b6d296eefc75331e2ff9f0adcffbd7d27862dd6" },
-  "Hypersonic.nvim": { "branch": "main", "commit": "734dfbfbe51952f102a9b439d53d4267bb0024cd" },
   "LuaSnip": { "branch": "master", "commit": "458560534a73f7f8d7a11a146c801db00b081df0" },
   "aerial.nvim": { "branch": "master", "commit": "3284a2cb858ba009c79da87d5e010ccee3c99c4d" },
   "astrocommunity": { "branch": "main", "commit": "6f3e4a5606e51e174f51a63e3b8f4a8f12f1f19b" },
