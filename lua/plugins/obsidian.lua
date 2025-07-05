@@ -115,6 +115,7 @@ return {
           path = "~/Brain/",
         },
       },
+      legacy_commands = false,
     })
   end,
 }
