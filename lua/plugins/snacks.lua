@@ -3,6 +3,14 @@ return {
   "folke/snacks.nvim",
   ---@type snacks.Config
   opts = {
+    picker = {
+      layout = {
+        layout = {
+          width = 0.9,
+          height = 0.8,
+        },
+      },
+    },
     quickfile = {},
     explorer = { enabled = true, replace_netrw = true },
     dashboard = {
