@@ -1,5 +1,14 @@
 local trigger = "<Leader>,"
 
+local function GrepNotes()
+  require("snacks").picker.grep {
+    live = true,
+    title = "Grep Notes",
+    cwd = "~/Brain",
+    prompt = "> ",
+  }
+end
+
 ---@type LazySpec
 return {
   "obsidian-nvim/obsidian.nvim",
@@ -36,6 +45,7 @@ return {
             [trigger .. "p"] = { "<cmd>Obsidian paste_img<CR>", desc = "Paste Image" },
             [trigger .. "r"] = { "<cmd>Obsidian rename<CR>", desc = "Rename Note" },
             [trigger .. "i"] = { "<cmd>Obsidian template<CR>", desc = "Insert Template" },
+            [trigger .. "/"] = { GrepNotes, desc = "Grep Notes" },
           },
           v = {
             [trigger] = { desc = "Obsidian" },
