@@ -24,6 +24,7 @@ return {
   { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.motion.vim-matchup" },
   { import = "astrocommunity.pack.astro" },
+  { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.julia" },
   { import = "astrocommunity.pack.lua" },
