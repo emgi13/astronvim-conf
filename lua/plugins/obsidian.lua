@@ -17,7 +17,7 @@ return {
   -- event = { "bufreadpre " .. vim.fn.expand "~" .. "/my-vault/**.md" },
   -- event = { "BufReadPre  /mnt/c/Obsidian/Brain/*.md" },
   event = {
-    "BufReadPre " .. vim.fn.expand "~" .. "/Brain",
+    "BufReadPre /mnt/c/Obsidian/Brain/*.md",
   },
   cmd = "Obsidian",
   dependencies = {
