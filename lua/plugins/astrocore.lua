@@ -49,6 +49,9 @@ return {
     mappings = {
       -- first key is the mode
       n = {
+        ["<C-q>"] = { "<CMD>confirm qall<CR>", desc = "Exit Neovim" },
+        ["<C-Q>"] = false,
+        ["<Leader>Q"] = false,
         -- second key is the lefthand side of the map
 
         -- navigate buffer tabs with `H` and `L`
