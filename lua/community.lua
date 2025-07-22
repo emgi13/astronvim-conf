@@ -11,7 +11,6 @@ return {
   { import = "astrocommunity.completion.cmp-nerdfont" },
   { import = "astrocommunity.diagnostics.lsp_lines-nvim" },
   { import = "astrocommunity.editing-support.chatgpt-nvim" },
-  { import = "astrocommunity.editing-support.nvim-devdocs" },
   { import = "astrocommunity.editing-support.telescope-undo-nvim" },
   { import = "astrocommunity.editing-support.vim-move" },
   { import = "astrocommunity.editing-support.wildfire-nvim" },
