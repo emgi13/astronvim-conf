@@ -20,4 +20,32 @@ return {
     },
   },
   cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
+  -- Load in local leader
+  dependencies = {
+    {
+      "AstroNvim/astrocore",
+      ---@type AstroCoreOpts
+      opts = {
+        autocmds = {
+          buffer_enable_csvview = {
+            {
+              event = "FileType",
+              pattern = { "csv" },
+              desc = "Enable CSVView buffer local",
+              callback = function(opts)
+                local ac = require "astrocore"
+                local prefix = "<LocalLeader>"
+                ac.set_mappings({
+                  n = {
+                    [prefix] = { desc = " CSV" },
+                    [prefix .. ","] = { "<CMD>CsvViewToggle display_mode=border<CR>", desc = "Toggle UI" },
+                  },
+                }, { buffer = opts.buf })
+              end,
+            },
+          },
+        },
+      },
+    },
+  },
 }
