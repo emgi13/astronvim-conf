@@ -5,13 +5,7 @@ return {
     opts = {
       ensure_installed = {
         "texlab",
-        "ltex-ls",
       },
     },
-  },
-  {
-    "icewind/ltex-client.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    opts = {},
   },
 }
