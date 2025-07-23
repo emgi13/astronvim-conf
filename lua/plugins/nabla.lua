@@ -19,9 +19,9 @@ return {
               callback = function(opts)
                 require("astrocore").set_mappings({
                   n = {
-                    ["<localleader>m"] = {
+                    ["<LocalLeader>,"] = {
                       function() require("nabla").popup() end,
-                      desc = "Preview Math",
+                      desc = "Popup Math",
                     },
                   },
                 }, { buffer = opts.buf })

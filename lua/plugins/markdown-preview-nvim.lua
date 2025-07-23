@@ -37,7 +37,7 @@ return {
               desc = "Enable MarkdownPreview buffer local",
               callback = function(opts)
                 local ac = require "astrocore"
-                local prefix = "<localleader>"
+                local prefix = "<LocalLeader>"
                 local icon = require("astroui").get_icon("Markdown", 1, true)
                 ac.set_mappings({
                   n = {
