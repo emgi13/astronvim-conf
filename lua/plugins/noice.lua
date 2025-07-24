@@ -6,6 +6,7 @@ return {
     local utils = require "astrocore"
     return utils.extend_tbl(opts, {
       lsp = {
+        progress = { enabled = false }, -- Disable bottom right lsp progress
         -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
         override = {
           ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
