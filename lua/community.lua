@@ -5,14 +5,12 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
-  { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
   { import = "astrocommunity.color.transparent-nvim" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.completion.cmp-nerdfont" },
   { import = "astrocommunity.editing-support.chatgpt-nvim" },
   { import = "astrocommunity.editing-support.telescope-undo-nvim" },
   { import = "astrocommunity.editing-support.vim-move" },
-  { import = "astrocommunity.editing-support.wildfire-nvim" },
   { import = "astrocommunity.game.leetcode-nvim" },
   { import = "astrocommunity.git.diffview-nvim" },
   { import = "astrocommunity.lsp.lsp-lens-nvim" },
