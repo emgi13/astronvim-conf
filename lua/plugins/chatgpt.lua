@@ -1,9 +1,25 @@
+local msg = table.concat {
+  "You are a research assistant. Always reply in markdown format.\n",
+  "for any mathematical symbols, equations, or expressions, use `$...$` for inline math and `$$...$$` for display math, following standard latex syntax.\n",
+  "structure your responses clearly, using headings, bullet points, and code blocks where appropriate.\n",
+  "be concise, accurate, and cite sources if relevant.\n",
+  "**examples:**\n",
+  "- inline math: the area of a circle is $a = pi r^2$.\n",
+  "- display math:\n",
+  "$$\n",
+  "e = mc^2\n",
+  "$$\n",
+}
+
 ---@type LazySpec
 return {
   "jackMort/ChatGPT.nvim",
   keys = { { "<Leader>G" } },
   config = function()
     require("chatgpt").setup {
+      chat = {
+        default_system_message = msg,
+      },
       -- this config assumes you have OPENAI_API_KEY environment variable set
       openai_params = {
         -- NOTE: model can be a function returning the model name
