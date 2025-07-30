@@ -1,3 +1,5 @@
+local Snacks = require "snacks"
+
 ---@type LazySpec
 return {
   "folke/snacks.nvim",
@@ -60,11 +62,12 @@ return {
   dependencies = {
     {
       "AstroNvim/astrocore",
+      ---@type AstroCoreOpts
       opts = {
         mappings = {
           n = {
             ["<Leader>e"] = {
-              function() require("snacks").explorer() end,
+              function() Snacks.explorer() end,
               desc = "Open Explorer",
             },
           },
