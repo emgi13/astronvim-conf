@@ -18,6 +18,7 @@ return {
   { import = "astrocommunity.motion.vim-matchup" },
   { import = "astrocommunity.pack.astro" },
   { import = "astrocommunity.pack.bash" },
+  { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.julia" },
   { import = "astrocommunity.pack.lua" },
