@@ -70,6 +70,10 @@ return {
               function() Snacks.explorer() end,
               desc = "Open Explorer",
             },
+            ["<Leader>fu"] = {
+              function() Snacks.picker.undo() end,
+              desc = "Find Undos",
+            },
           },
         },
       },
