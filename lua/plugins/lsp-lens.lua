@@ -1,6 +1,6 @@
 ---@type LazySpec
 return {
   "VidocqH/lsp-lens.nvim",
-  event = "VeryLazy",
+  event = "User AstroFile",
   opts = {},
 }
