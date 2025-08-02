@@ -22,6 +22,7 @@ return {
   { import = "astrocommunity.editing-support.wildfire-nvim" },
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
   { import = "astrocommunity.pack.julia" },
+  { import = "astrocommunity.indent.snacks-indent-hlchunk" },
   { import = "astrocommunity.pack.lean" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.markdown" },
