@@ -15,6 +15,7 @@ return {
   { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
   { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.motion.vim-matchup" },
+  { import = "astrocommunity.code-runner.compiler-nvim" },
   { import = "astrocommunity.pack.astro" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.cpp" },
