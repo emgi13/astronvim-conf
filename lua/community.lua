@@ -10,7 +10,6 @@ return {
   { import = "astrocommunity.completion.cmp-nerdfont" },
   { import = "astrocommunity.editing-support.chatgpt-nvim" },
   { import = "astrocommunity.editing-support.vim-move" },
-  { import = "astrocommunity.game.leetcode-nvim" },
   { import = "astrocommunity.git.diffview-nvim" },
   { import = "astrocommunity.markdown-and-latex.vimtex" },
   { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
