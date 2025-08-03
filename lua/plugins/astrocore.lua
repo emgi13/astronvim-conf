@@ -49,6 +49,7 @@ return {
     mappings = {
       -- first key is the mode
       n = {
+        ["<M-,>"] = { "<CMD>ToggleTerm<CR>", desc = "ToggleTerm" },
         ["<C-q>"] = { "<CMD>confirm qall<CR>", desc = "Exit Neovim" },
         ["<C-Q>"] = false,
         ["<Leader>Q"] = false,
@@ -77,6 +78,7 @@ return {
       t = {
         -- setting a mapping to false will disable it
         -- ["<esc>"] = false,
+        ["<M-,>"] = { "<CMD>ToggleTerm<CR>", desc = "ToggleTerm" },
       },
     },
   },
