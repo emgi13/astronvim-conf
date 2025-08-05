@@ -4,5 +4,5 @@ return {
   { "https://github.com/windwp/nvim-ts-autotag", enabled = false }, -- This is messing with luasnip
   { "https://github.com/s1n7ax/nvim-window-picker", enabled = false }, -- Window picker not used regularly
   { "nvim-neo-tree/neo-tree.nvim", enabled = false }, -- using snacks picker instead
-  { "nvim-telescope/telescope.nvim", enabled = false }, -- using snacks picker instead
+  -- { "nvim-telescope/telescope.nvim", enabled = false }, -- using snacks picker instead, WARN: but required by chatgpt.nvim
 }
