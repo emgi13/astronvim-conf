@@ -61,7 +61,7 @@ return {
     local astrocore = require "astrocore"
     return astrocore.extend_tbl(opts, {
       dir = "~/Brain/", -- specify the vault location. no need to call 'vim.fn.expand' here
-      finder = (astrocore.is_available "snacks.pick" and "snacks.pick")
+      finder = (astrocore.is_available "snacks.nvim" and "snacks.pick")
         or (astrocore.is_available "telescope.nvim" and "telescope.nvim")
         or (astrocore.is_available "fzf-lua" and "fzf-lua")
         or (astrocore.is_available "mini.pick" and "mini.pick"),
