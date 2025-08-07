@@ -1,4 +1,3 @@
--- TODO: Fix Backdrop dimming
 local Snacks = require "snacks"
 local header = [[
 ██████████████████████████████████████████████████████████████████
