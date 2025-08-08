@@ -60,28 +60,6 @@ return {
       },
     },
     picker = {
-      sources = {
-        lines = {
-          layout = {
-            layout = {
-              box = "vertical",
-              backdrop = false,
-              row = -1,
-              width = 0,
-              height = 0.4,
-              border = "top",
-              title = " {title} {live} {flags}",
-              title_pos = "left",
-              { win = "input", height = 1, border = "bottom" },
-              {
-                box = "horizontal",
-                { win = "list", border = "none" },
-                { win = "preview", title = "{preview}", width = 0.6, border = "left" },
-              },
-            },
-          },
-        },
-      },
       previewers = {
         diff = {
           builtin = false, -- use Neovim for previewing diffs (true) or use an external tool (false)
@@ -102,26 +80,32 @@ return {
         frecency = true,
         cwd_bonus = true,
       },
-      layout = {
-        preview = nil,
-        layout = {
-          box = "vertical",
-          backdrop = {
-            blend = 90,
-            transparent = true,
-            bg = "#000000",
+      layout = function(source)
+        for key, _ in pairs { "explorer", "lines" } do
+          ---@diagnostic disable-next-line nil can be returned to default to plugin default
+          if source == key then return nil end
+        end
+        return {
+          preview = nil,
+          layout = {
+            box = "vertical",
+            backdrop = {
+              blend = 90,
+              transparent = true,
+              bg = "#000000",
+            },
+            width = 0.9,
+            height = 0.9,
+            position = "float",
+            border = "double",
+            title = " {title} {live} {flags}",
+            title_pos = "center",
+            { win = "preview", title = "{preview}", border = "bottom" },
+            { win = "list", height = 10, border = "bottom" },
+            { win = "input", height = 1, border = "none" },
           },
-          width = 0.9,
-          height = 0.9,
-          position = "float",
-          border = "double",
-          title = " {title} {live} {flags}",
-          title_pos = "center",
-          { win = "preview", title = "{preview}", border = "bottom" },
-          { win = "list", height = 10, border = "bottom" },
-          { win = "input", height = 1, border = "none" },
-        },
-      },
+        }
+      end,
     },
   },
   dependencies = {
