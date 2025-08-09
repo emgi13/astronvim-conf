@@ -9,24 +9,33 @@ return {
   ---@type AstroUIOpts
   opts = {
     -- change colorscheme
-    -- INFO: GOOD THEMES
+    -- info: good themes
     -- zaibatsu
     -- catppuccin
     colorscheme = "catppuccin-mocha",
-    -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
-    -- Icons can be configured throughout the interface
+    folding = {
+      enabled = function(bufnr) return require("astrocore.buffer").is_valid(bufnr) end,
+      methods = { "lsp", "treesitter", "indent" },
+    },
+    status = {
+      winbar = {
+        enabled = {},
+      },
+    },
+    -- astroui allows you to easily modify highlight groups easily for any and all colorschemes
+    -- icons can be configured throughout the interface
     icons = {
       -- configure the loading of the lsp in the status line
-      LSPLoading1 = "⠋",
-      LSPLoading2 = "⠙",
-      LSPLoading3 = "⠹",
-      LSPLoading4 = "⠸",
-      LSPLoading5 = "⠼",
-      LSPLoading6 = "⠴",
-      LSPLoading7 = "⠦",
-      LSPLoading8 = "⠧",
-      LSPLoading9 = "⠇",
-      LSPLoading10 = "⠏",
+      lsploading1 = "⠋",
+      lsploading2 = "⠙",
+      lsploading3 = "⠹",
+      lsploading4 = "⠸",
+      lsploading5 = "⠼",
+      lsploading6 = "⠴",
+      lsploading7 = "⠦",
+      lsploading8 = "⠧",
+      lsploading9 = "⠇",
+      lsploading10 = "⠏",
     },
   },
 }
