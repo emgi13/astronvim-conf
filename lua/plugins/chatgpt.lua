@@ -13,7 +13,7 @@ local msg = table.concat {
 
 ---@type LazySpec
 return {
-  "jackMort/ChatGPT.nvim",
+  "emgi13/ChatGPT.nvim",
   keys = { { "<Leader>G" } },
   config = function()
     require("chatgpt").setup {
