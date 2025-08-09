@@ -30,6 +30,7 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "auto", -- sets vim.opt.signcolumn to auto
         wrap = true, -- sets vim.opt.wrap
+        foldcolumn = "0", -- Disables foldcolumn
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
