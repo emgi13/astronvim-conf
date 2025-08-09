@@ -9,7 +9,6 @@ return {
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
   { import = "astrocommunity.completion.cmp-nerdfont" },
-  { import = "astrocommunity.editing-support.chatgpt-nvim" },
   { import = "astrocommunity.editing-support.vim-move" },
   { import = "astrocommunity.git.diffview-nvim" },
   { import = "astrocommunity.markdown-and-latex.vimtex" },
