@@ -23,6 +23,10 @@ return {
                       function() require("nabla").popup() end,
                       desc = "Popup Math",
                     },
+                    ["<LocalLeader>!"] = {
+                      function() require("nabla").toggle_virt() end,
+                      desc = "Toggle Nabla Virtualization",
+                    },
                   },
                 }, { buffer = opts.buf })
               end,
