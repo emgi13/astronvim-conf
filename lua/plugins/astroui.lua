@@ -24,18 +24,5 @@ return {
     },
     -- astroui allows you to easily modify highlight groups easily for any and all colorschemes
     -- icons can be configured throughout the interface
-    icons = {
-      -- configure the loading of the lsp in the status line
-      lsploading1 = "⠋",
-      lsploading2 = "⠙",
-      lsploading3 = "⠹",
-      lsploading4 = "⠸",
-      lsploading5 = "⠼",
-      lsploading6 = "⠴",
-      lsploading7 = "⠦",
-      lsploading8 = "⠧",
-      lsploading9 = "⠇",
-      lsploading10 = "⠏",
-    },
   },
 }
