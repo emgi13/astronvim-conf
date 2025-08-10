@@ -50,6 +50,7 @@ return {
     mappings = {
       -- first key is the mode
       n = {
+        ["<LocalLeader>"] = { desc = "File Operations" },
         ["<M-,>"] = { "<CMD>ToggleTerm<CR>", desc = "ToggleTerm" },
         ["<C-q>"] = { "<CMD>confirm qall<CR>", desc = "Exit Neovim" },
         ["<C-Q>"] = false,
