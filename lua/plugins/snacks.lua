@@ -101,7 +101,7 @@ return {
             title = " {title} {live} {flags}",
             title_pos = "center",
             { win = "preview", title = "{preview}", border = "bottom" },
-            { win = "list", height = 10, border = "bottom" },
+            { win = "list", height = 0.20, border = "bottom" },
             { win = "input", height = 1, border = "none" },
           },
         }
