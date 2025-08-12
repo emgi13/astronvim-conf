@@ -60,7 +60,10 @@ return {
         -- navigate buffer tabs with `H` and `L`
         L = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         H = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
-        ["<M-t>"] = { "<CMD>tabnew<CR>", desc = "New Tab" },
+        ["<M-t>"] = { "<CMD>tab split<CR>", desc = "New Tab" },
+        ["<M-L>"] = { "<CMD>tabnext<CR>", desc = "Next Tab" },
+        ["<M-H>"] = { "<CMD>tabprevious<CR>", desc = "Previous Tab" },
+        ["<M-q>"] = { "<CMD>tabclose<CR>", desc = "Previous Tab" },
 
         -- -- mappings seen under group name "Buffer"
         -- ["<Leader>bD"] = {
