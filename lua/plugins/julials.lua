@@ -13,7 +13,7 @@ return {
           local julia = (vim.env.JULIA_DEPOT_PATH or vim.fn.expand "~/.julia")
             .. "/environments/nvim-lspconfig/bin/julia"
           -- if the shim is found, then update the julia command
-          if require("lspconfig").util.path.is_file(julia) then new_config.cmd[1] = julia end
+          if (vim.uv.fs_stat(julia) or {}).type == "file" then new_config.cmd[1] = julia end
         end,
       },
     },
