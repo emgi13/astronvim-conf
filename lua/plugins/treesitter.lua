@@ -9,6 +9,7 @@ return {
       "vim",
       "latex",
       "regex",
+      "make",
       -- add more arguments for adding more treesitter parsers
     },
   },
