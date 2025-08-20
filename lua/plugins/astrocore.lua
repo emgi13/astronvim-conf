@@ -31,6 +31,7 @@ return {
         signcolumn = "auto", -- sets vim.opt.signcolumn to auto
         wrap = true, -- sets vim.opt.wrap
         foldcolumn = "0", -- Disables foldcolumn
+        scrolloff = 8, -- Scroll offset
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
