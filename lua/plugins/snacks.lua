@@ -123,6 +123,10 @@ return {
               function() Snacks.picker.undo() end,
               desc = "Find Undos",
             },
+            ["<Leader>fP"] = {
+              function() Snacks.picker.pickers() end,
+              desc = "Find all Pickers",
+            },
           },
         },
       },
