@@ -125,6 +125,16 @@ return {
           name = "Brain",
           path = "~/Brain/",
         },
+        {
+          name = "no-vault",
+          path = function() return assert(vim.fs.dirname(vim.api.nvim_buf_get_name(0))) end,
+          overrides = {
+            notes_subdir = vim.NIL, -- disables new notes creation in subfolders
+            new_notes_location = "current_dir",
+            templates = { folder = vim.NIL },
+            disable_frontmatter = true,
+          },
+        },
       },
       legacy_commands = false,
     })
