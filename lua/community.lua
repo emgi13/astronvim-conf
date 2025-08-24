@@ -23,7 +23,7 @@ return {
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.html-css" },
-  { import = "astrocommunity.pack.julia" },
+  -- { import = "astrocommunity.pack.julia" },
   { import = "astrocommunity.pack.lean" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.markdown" },

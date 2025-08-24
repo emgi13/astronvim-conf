@@ -1,3 +1,5 @@
+if true then return {} end -- WARN: Enable if you are using julia
+
 return {
   "AstroNvim/astrolsp",
   opts = {
