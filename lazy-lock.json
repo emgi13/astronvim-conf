@@ -32,7 +32,7 @@
   "lazydev.nvim": { "branch": "main", "commit": "f59bd14a852ca43db38e3662395354cb2a9b13e0" },
   "lean.nvim": { "branch": "main", "commit": "b99a8449f4e04376676ec6facf0c4de9b6190c21" },
   "lsp-lens.nvim": { "branch": "main", "commit": "48bb1a7e271424c15f3d588d54adc9b7c319d977" },
-  "luasnip-latex-snippets.nvim": { "branch": "main", "commit": "cfb19237550b50955c3563908cbae23c2a43dcd2" },
+  "luasnip-latex-snippets.nvim": { "branch": "main", "commit": "780537b57b202efeb6ab7a64e7c56e20fd1bead0" },
   "markdown-preview.nvim": { "branch": "master", "commit": "a923f5fc5ba36a3b17e289dc35dc17f66d0548ee" },
   "markdown.nvim": { "branch": "master", "commit": "dfa0d2def6dbf77e9206b16dc90cad4dd23d55d2" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "1a31f824b9cd5bc6f342fc29e9a53b60d74af245" },
