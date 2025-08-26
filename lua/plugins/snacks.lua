@@ -32,6 +32,9 @@ return {
     --     },
     --   },
     -- },
+    image = {
+      enabled = false,
+    },
     quickfile = {},
     explorer = { enabled = true, replace_netrw = true },
     dashboard = {
