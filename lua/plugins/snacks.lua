@@ -57,12 +57,14 @@ return {
         },
         { section = "startup" },
       },
-
       preset = {
         header = header,
       },
     },
     picker = {
+      db = {
+        sqlite3_path = "/lib/x86_64-linux-gnu/libsqlite3.so.0", -- Path to sqlite3 shared object
+      },
       previewers = {
         diff = {
           builtin = false, -- use Neovim for previewing diffs (true) or use an external tool (false)
