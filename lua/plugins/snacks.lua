@@ -63,6 +63,9 @@ return {
       },
     },
     picker = {
+      db = {
+        sqlite3_path = "/lib/x86_64-linux-gnu/libsqlite3.so.0",
+      },
       previewers = {
         diff = {
           builtin = false, -- use Neovim for previewing diffs (true) or use an external tool (false)
