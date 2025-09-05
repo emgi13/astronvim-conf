@@ -8,15 +8,4 @@ return {
       },
     },
   },
-  {
-    "AstroNvim/astrocore",
-    ---@type AstroCoreOpts
-    opts = {
-      options = {
-        g = {
-          vimtex_view_method = "zathura",
-        },
-      },
-    },
-  },
 }
