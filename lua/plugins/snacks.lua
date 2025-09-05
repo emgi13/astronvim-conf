@@ -35,6 +35,9 @@ return {
     image = {
       enabled = false,
     },
+    scratch = {
+      enabled = true,
+    },
     quickfile = {},
     explorer = { enabled = true, replace_netrw = true },
     dashboard = {
@@ -131,6 +134,14 @@ return {
             ["<Leader>fP"] = {
               function() Snacks.picker.pickers() end,
               desc = "Find all Pickers",
+            },
+            ["<Leader>."] = {
+              function() Snacks.scratch() end,
+              desc = "Open Scratch Buffer",
+            },
+            ["<Leader>f."] = {
+              function() Snacks.scratch.select() end,
+              desc = "Search Scratch Buffers",
             },
           },
         },
