@@ -30,7 +30,7 @@ return {
   { import = "astrocommunity.pack.astro", ft = "astro" },
   { import = "astrocommunity.pack.bash", ft = { "sh", "zsh", "bash" } },
   { import = "astrocommunity.pack.cpp", ft = { "c", "cpp" } },
-  { import = "astrocommunity.pack.harper", event = "User AstroFile" }, -- uncommon, adjust if needed
+  -- { import = "astrocommunity.pack.harper", event = "User AstroFile" }, -- uncommon, adjust if needed
   { import = "astrocommunity.pack.html-css", ft = { "html", "css", "scss" } },
   { import = "astrocommunity.pack.lean", ft = "lean" },
   { import = "astrocommunity.pack.lua", ft = "lua" },
