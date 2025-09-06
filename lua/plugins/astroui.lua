@@ -14,8 +14,9 @@ return {
     -- catppuccin
     colorscheme = "catppuccin-mocha",
     folding = {
-      enabled = function(bufnr) return require("astrocore.buffer").is_valid(bufnr) end,
-      methods = { "lsp", "treesitter", "indent" },
+      enabled = false,
+      -- enabled = function(bufnr) return require("astrocore.buffer").is_valid(bufnr) end,
+      -- methods = { "lsp", "treesitter", "indent" },
     },
     status = {
       winbar = {
