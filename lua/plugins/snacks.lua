@@ -24,14 +24,9 @@ return {
   "folke/snacks.nvim",
   ---@type snacks.Config
   opts = {
-    -- picker = {
-    --   layout = {
-    --     layout = {
-    --       width = 0.9,
-    --       height = 0.8,
-    --     },
-    --   },
-    -- },
+    bigfile = {
+      enabled = true,
+    },
     image = {
       enabled = false,
     },
