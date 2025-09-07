@@ -23,6 +23,7 @@ return {
         enabled = {},
       },
     },
+    lazygit = false,
     -- astroui allows you to easily modify highlight groups easily for any and all colorschemes
     -- icons can be configured throughout the interface
   },
