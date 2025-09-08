@@ -36,6 +36,9 @@ return {
     quickfile = {},
     explorer = { enabled = true, replace_netrw = true },
     dashboard = {
+      formats = {
+        key = function(item) return { { "[", hl = "special" }, { item.key, hl = "key" }, { "]", hl = "special" } } end,
+      },
       sections = {
         { section = "header" },
         { section = "keys", gap = 1, padding = 1 },
