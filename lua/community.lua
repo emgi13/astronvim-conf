@@ -9,8 +9,8 @@ return {
   -- UI / General tools
   { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
   { import = "astrocommunity.code-runner.mf-runner-nvim" },
-  { import = "astrocommunity.color.transparent-nvim", event = "UIEnter" },
-  { import = "astrocommunity.colorscheme.catppuccin", event = "UIEnter" },
+  { import = "astrocommunity.color.transparent-nvim" },
+  { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.completion.cmp-nerdfont" },
   { import = "astrocommunity.editing-support.vim-move" },
   { import = "astrocommunity.editing-support.wildfire-nvim" },
@@ -21,10 +21,10 @@ return {
   { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.motion.vim-matchup" },
   { import = "astrocommunity.quickfix.nvim-bqf", ft = "qf" },
-  { import = "astrocommunity.recipes.heirline-clock-statusline", event = "VeryLazy" },
-  { import = "astrocommunity.recipes.heirline-mode-text-statusline", event = "VeryLazy" },
+  { import = "astrocommunity.recipes.heirline-clock-statusline" },
+  { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
   { import = "astrocommunity.terminal-integration.flatten-nvim" },
-  { import = "astrocommunity.utility.noice-nvim", event = "VeryLazy" },
+  { import = "astrocommunity.utility.noice-nvim" },
 
   -- Language Packs: load only on relevant filetypes
   { import = "astrocommunity.pack.astro", ft = "astro" },
