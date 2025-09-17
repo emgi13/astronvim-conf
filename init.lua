@@ -1,5 +1,9 @@
 -- This file simply bootstraps the installation of Lazy.nvim and then calls other files for execution
 -- This file doesn't necessarily need to be touched, BE CAUTIOUS editing this file and proceed at your own risk.
+
+vim.g.ruby_host_prog = '/home/linuxbrew/.linuxbrew/lib/ruby/gems/3.4.0/bin/neovim-ruby-host'
+vim.g.perl_host_prog = 'PERL5LIB=/home/emgixiii/perl5/lib/perl5 /usr/bin/perl'
+
 local lazypath = vim.env.LAZY or vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 if not (vim.env.LAZY or (vim.uv or vim.loop).fs_stat(lazypath)) then
   -- stylua: ignore
