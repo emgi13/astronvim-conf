@@ -4,6 +4,33 @@
 --       as this provides autocomplete and documentation while editing
 
 local Snacks = require "snacks"
+local extend = require("astrocore").extend_tbl
+
+local harper_start = function()
+  local lspconfig = require "lspconfig"
+  local client_ok, client = pcall(vim.lsp.get_client_by_name, "harper_ls")
+  if client_ok and client then
+    -- if client exists, attach it to current buffer
+    vim.lsp.buf_attach_client(0, client.id)
+  else
+    -- else setup the server manually and attach to current buffer
+    lspconfig.harper_ls.setup {}
+  end
+end
+
+local harper_stop = function()
+  local clients = vim.lsp.get_clients { bufnr = 0 } -- get clients attached to current buffer
+  local stopped = false
+  for _, client in ipairs(clients) do
+    if client.name == "harper_ls" then
+      client:stop()
+      stopped = true
+      break
+    end
+  end
+  if not stopped then print "Harper language server is not running." end
+end
+
 ---@type LazySpec
 return {
   "AstroNvim/astrolsp",
@@ -44,6 +71,19 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      harper_ls = {
+        autostart = false,
+      },
+    },
+    commands = {
+      HarperStart = {
+        harper_start,
+        desc = "Start Grammar check using HarperLS",
+      },
+      HarperStop = {
+        harper_stop,
+        desc = "Stop Harper language server",
+      },
     },
     -- customize how language servers are attached
     handlers = {
@@ -100,6 +140,22 @@ return {
         ["gD"] = {
           function() Snacks.picker.lsp_declarations() end,
           desc = "Goto Declarations",
+        },
+        ["<Leader>us"] = {
+          function()
+            local astrocore_toggles = require "astrocore.toggles"
+
+            -- Toggle spell check (existing)
+            astrocore_toggles.spell()
+
+            -- Check the new state of spell option in current window
+            if vim.wo.spell then
+              harper_start()
+            else
+              harper_stop()
+            end
+          end,
+          desc = "Toggle spellcheck",
         },
       },
     },
