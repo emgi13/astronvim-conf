@@ -74,6 +74,15 @@ return {
       harper_ls = {
         autostart = false,
       },
+      basedpyright = {
+        settings = {
+          basedpyright = {
+            analysis = {
+              diagnosticMode = "openFilesOnly",
+            },
+          },
+        },
+      },
     },
     commands = {
       HarperStart = {
