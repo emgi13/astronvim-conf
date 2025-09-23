@@ -25,6 +25,7 @@ return {
   { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
   { import = "astrocommunity.terminal-integration.flatten-nvim" },
   { import = "astrocommunity.utility.noice-nvim" },
+  { import = "astrocommunity.pack.diff-keybindings" },
 
   -- Language Packs: load only on relevant filetypes
   { import = "astrocommunity.pack.astro", ft = "astro" },
