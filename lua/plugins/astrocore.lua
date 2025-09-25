@@ -78,6 +78,7 @@ return {
         ["<M-L>"] = { "<CMD>tabnext<CR>", desc = "Next Tab" },
         ["<M-H>"] = { "<CMD>tabprevious<CR>", desc = "Previous Tab" },
         ["<M-q>"] = { "<CMD>tabclose<CR>", desc = "Previous Tab" },
+        ["<C-w><C-w>"] = { "<CMD>Noice dismiss<CR>", desc = "Close Noice Window" },
 
         -- -- mappings seen under group name "Buffer"
         -- ["<Leader>bD"] = {
