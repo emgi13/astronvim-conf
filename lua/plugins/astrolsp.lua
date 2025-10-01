@@ -4,7 +4,6 @@
 --       as this provides autocomplete and documentation while editing
 
 local Snacks = require "snacks"
-local extend = require("astrocore").extend_tbl
 
 local harper_start = function()
   local lspconfig = require "lspconfig"
@@ -170,7 +169,7 @@ return {
     },
     -- A custom `on_attach` function to be run after the default `on_attach` function
     -- takes two parameters `client` and `bufnr`  (`:h lspconfig-setup`)
-    on_attach = function(client, bufnr)
+    on_attach = function(_client, _bufnr)
       -- this would disable semanticTokensProvider for all clients
       -- client.server_capabilities.semanticTokensProvider = nil
     end,
