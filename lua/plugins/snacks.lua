@@ -116,6 +116,9 @@ return {
         }
       end,
     },
+    words = {
+      enabled = true,
+    },
   },
   dependencies = {
     {
@@ -143,6 +146,15 @@ return {
             ["<Leader>f."] = {
               function() Snacks.scratch.select() end,
               desc = "Search Scratch Buffers",
+            },
+            --- Snacks Words implementation
+            ["]]"] = {
+              function() Snacks.words.jump(vim.v.count1) end,
+              desc = "Snacks words jump next",
+            },
+            ["[["] = {
+              function() Snacks.words.jump(-vim.v.count1) end,
+              desc = "Snacks words jump prev",
             },
           },
         },
