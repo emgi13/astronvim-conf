@@ -62,6 +62,9 @@ return {
         header = header,
       },
     },
+    statuscolumn = {
+      enabled = true,
+    },
     picker = {
       db = {
         sqlite3_path = "/lib/x86_64-linux-gnu/libsqlite3.so.0", -- Path to sqlite3 shared object
@@ -144,6 +147,13 @@ return {
           },
         },
       },
+    },
+  },
+  specs = {
+    {
+      "rebelot/heirline.nvim",
+      optional = true,
+      opts = function(_, opts) opts.statuscolumn = nil end,
     },
   },
 }
