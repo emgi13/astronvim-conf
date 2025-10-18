@@ -1,3 +1,5 @@
+if true then return {} end -- Disable the plugin
+
 ---@type LazySpec
 return {
   "folke/sidekick.nvim",
