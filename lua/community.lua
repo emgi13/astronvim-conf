@@ -24,7 +24,6 @@ return {
   { import = "astrocommunity.recipes.heirline-clock-statusline" },
   { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
   { import = "astrocommunity.terminal-integration.flatten-nvim" },
-  { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.pack.diff-keybindings" },
   { import = "astrocommunity.ai.opencode-nvim" },
 
