@@ -33,6 +33,7 @@ return {
         wrap = true, -- sets vim.opt.wrap
         foldcolumn = "0", -- Disables foldcolumn
         scrolloff = 8, -- Scroll offset
+        clipboard = "unnamedplus",
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -45,18 +46,6 @@ return {
         icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
         ui_notifications_enabled = true, -- disable notifications when toggling UI elements
         resession_enabled = false, -- enable experimental resession.nvim session management (will be default in AstroNvim v4)
-        clipboard = {
-          name = "Win32Yank",
-          copy = {
-            ["+"] = "win32yank.exe -i --crlf",
-            ["*"] = "win32yank.exe -i --crlf",
-          },
-          paste = {
-            ["+"] = "win32yank.exe -o --lf",
-            ["*"] = "win32yank.exe -o --lf",
-          },
-          cache_enabled = 0,
-        },
       },
     },
     -- Mappings can be configured through AstroCore as well.
