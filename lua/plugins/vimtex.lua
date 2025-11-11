@@ -3,12 +3,21 @@ return {
   "lervag/vimtex",
   lazy = false,
   config = function()
+    -- Set Sioyek as the PDF viewer
     vim.g.vimtex_view_method = "sioyek"
-    vim.g.vimtex_view_sioyek_exe = "sioyek.exe" -- Windows exe in PATH
-    vim.g.vimtex_callback_progpath = "wsl nvim" -- Call nvim inside WSL from Windows inverse search, also enable `vimtex_wsl_fix 1` in sioyek
+    -- Path to Sioyek executable (AppImage in your setup)
+    vim.g.vimtex_view_sioyek_exe = "/home/emgixiii/.local/share/applications/Sioyek-x86_64.AppImage"
+    -- Optional: pass additional options to Sioyek
+    -- Example: fit to page height on startup
+    -- Set Tectonic as the compiler method
+    vim.g.vimtex_compiler_method = "tectonic"
+    -- Use continuous compilation with Tectonic
+    vim.g.vimtex_compiler_continuous = 1
+    -- Enable forward and inverse search sync method
     vim.g.vimtex_sync_method = "synctex"
-    -- Optional: add any sioyek options here, e.g.,
-    -- vim.g.vimtex_view_sioyek_options = '--some-option'
+    -- Optional: auto open PDF after successful compilation
+    vim.g.vimtex_view_automatic = 1
+    vim.g.vimtex_callback_progpath = "nvim" -- or your custom executable path if needed
   end,
   dependencies = {
     "AstroNvim/astrocore",
