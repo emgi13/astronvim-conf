@@ -28,7 +28,14 @@ return {
       enabled = true,
     },
     image = {
-      enabled = false,
+      enabled = true,
+      math = {
+        enabled = true,
+        latex = {
+          font_size = "normalsize",
+          packages = { "amsmath", "amssymb", "amsfonts", "amscd", "mathtools", "physics", "amsthm", "dsfont" },
+        },
+      },
     },
     scratch = {
       enabled = true,
