@@ -29,6 +29,9 @@ return {
     },
     image = {
       enabled = true,
+      inline = false,
+      float = true,
+      convert = { notify = true },
       math = {
         enabled = true,
         latex = {
@@ -168,6 +171,10 @@ return {
             ["[["] = {
               function() Snacks.words.jump(-vim.v.count1) end,
               desc = "Snacks words jump prev",
+            },
+            ["<Leader>k"] = {
+              function() Snacks.image.hover() end,
+              desc = "Snacks image preview",
             },
           },
         },
