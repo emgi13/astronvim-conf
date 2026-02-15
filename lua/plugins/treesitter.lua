@@ -1,5 +1,4 @@
 -- Customize Treesitter
-
 ---@type LazySpec
 return {
   "nvim-treesitter/nvim-treesitter",
@@ -7,10 +6,17 @@ return {
     ensure_installed = {
       "lua",
       "vim",
-      "latex",
       "regex",
       "make",
-      -- add more arguments for adding more treesitter parsers
+    },
+    ignore_install = { "latex" }, -- Prevents latex parser install
+    highlight = {
+      enable = true,
+      disable = { "latex" }, -- Disables highlighting for latex
+    },
+    indent = {
+      enable = true,
+      disable = { "latex" }, -- Disables indentation for latex
     },
   },
 }
