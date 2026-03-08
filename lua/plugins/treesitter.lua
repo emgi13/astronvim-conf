@@ -8,15 +8,20 @@ return {
       "vim",
       "regex",
       "make",
+      "markdown",
+      "markdown_inline",
+      "latex",
     },
-    ignore_install = { "latex" }, -- Prevents latex parser install
+    ignore_install = {},
     highlight = {
       enable = true,
-      disable = { "latex" }, -- Disables highlighting for latex
+      -- Disable treesitter highlighting for 'latex' ONLY in 'tex' files to avoid interfering with vimtex
+      disable = function(lang, buf) return lang == "latex" and vim.bo[buf].filetype == "tex" end,
     },
     indent = {
       enable = true,
-      disable = { "latex" }, -- Disables indentation for latex
+      -- Disable treesitter indentation for 'latex' ONLY in 'tex' files
+      disable = function(lang, buf) return lang == "latex" and vim.bo[buf].filetype == "tex" end,
     },
   },
 }

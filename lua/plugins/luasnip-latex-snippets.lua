@@ -6,6 +6,7 @@ return {
     require("luasnip").config.setup { enable_autosnippets = true }
     require("luasnip-latex-snippets").setup {
       allow_on_markdown = true,
+      use_treesitter = true,
     }
   end,
 }
