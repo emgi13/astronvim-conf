@@ -4,8 +4,6 @@ return {
   lazy = false,
   config = function()
     vim.g.vimtex_view_method = "sioyek"
-    vim.g.vimtex_view_sioyek_exe = "sioyek.exe" -- Windows exe in PATH
-    vim.g.vimtex_callback_progpath = "wsl nvim" -- Call nvim inside WSL from Windows inverse search, also enable `vimtex_wsl_fix 1` in sioyek
     vim.g.vimtex_sync_method = "synctex"
     -- Optional: add any sioyek options here, e.g.,
     -- vim.g.vimtex_view_sioyek_options = '--some-option'
