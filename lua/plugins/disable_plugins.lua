@@ -5,4 +5,5 @@ return {
   { "s1n7ax/nvim-window-picker", enabled = false }, -- Window picker not used regularly
   { "nvim-neo-tree/neo-tree.nvim", enabled = false }, -- using snacks picker instead
   { "nvim-telescope/telescope.nvim", enabled = false }, -- using snacks picker instead,
+  { "stevearc/aerial.nvim", enabled = false }, -- incompatible with new treesitter
 }
