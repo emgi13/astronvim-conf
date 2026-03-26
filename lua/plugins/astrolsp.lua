@@ -88,6 +88,14 @@ return {
           },
         },
       },
+      texlab = {
+        settings = {
+          texlab = {
+            latexFormatter = "tex-fmt",
+            bibtexFormatter = "tex-fmt",
+          },
+        },
+      },
     },
     commands = {
       HarperStart = {
