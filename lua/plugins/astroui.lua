@@ -27,7 +27,7 @@ return {
       methods = { "lsp", "treesitter", "indent" },
     },
     -- Icons can be configured throughout the interface
-    status = { winbar = { enabled = {} } },
+    -- status = { winbar = { enabled = {} } },
     lazygit = false,
     icons = {
       -- configure the loading of the lsp in the status line
