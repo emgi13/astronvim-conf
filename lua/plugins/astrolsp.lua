@@ -112,7 +112,7 @@ return {
         desc = "Start Grammar check using HarperLS",
       },
       HarperStop = {
-        function() vim.lsp.disable "harper_ls" end,
+        function() vim.lsp.enable("harper_ls", false) end,
         desc = "Stop Harper language server",
       },
     },
@@ -184,7 +184,7 @@ return {
               vim.lsp.enable "harper_ls"
               print "HarperLS & Spellcheck Enabled"
             else
-              vim.lsp.disable "harper_ls"
+              vim.lsp.enable("harper_ls", false)
               print "HarperLS & Spellcheck Disabled"
             end
           end,
