@@ -43,23 +43,6 @@ return {
     -- client specific configuration can also go in `lsp/` in your configuration root (see `:h lsp-config`)
     ---@diagnostic disable: missing-fields
     config = {
-      basedpyright = {
-        settings = {
-          basedpyright = {
-            analysis = {
-              diagnosticMode = "openFilesOnly",
-            },
-          },
-        },
-      },
-      texlab = {
-        settings = {
-          texlab = {
-            latexFormatter = "tex-fmt",
-            bibtexFormatter = "tex-fmt",
-          },
-        },
-      },
       -- ["*"] = { capabilities = {} }, -- modify default LSP client settings such as capabilities
     },
     -- customize how language servers are attached
