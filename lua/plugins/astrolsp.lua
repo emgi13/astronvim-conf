@@ -43,50 +43,6 @@ return {
     -- client specific configuration can also go in `lsp/` in your configuration root (see `:h lsp-config`)
     ---@diagnostic disable: missing-fields
     config = {
-      harper_ls = {
-        autostart = false,
-        -- 1. ADD FILETYPES HERE: Extend the default list to include LaTeX
-        filetypes = {
-          "c",
-          "cpp",
-          "cs",
-          "gitcommit",
-          "go",
-          "html",
-          "java",
-          "javascript",
-          "lua",
-          "markdown",
-          "nix",
-          "python",
-          "ruby",
-          "rust",
-          "swift",
-          "toml",
-          "typescript",
-          "typescriptreact",
-          "haskell",
-          "cmake",
-          "typst",
-          "php",
-          "dart",
-          "clojure",
-          "tex",
-          "plaintex",
-          "latex", -- <-- LaTeX enabled here
-        },
-        settings = {
-          ["harper-ls"] = {
-            codeActions = {
-              forceStable = true,
-            },
-            linters = {
-              spelled_numbers = true,
-              linking_verbs = true,
-            },
-          },
-        },
-      },
       basedpyright = {
         settings = {
           basedpyright = {
@@ -106,17 +62,6 @@ return {
       },
       -- ["*"] = { capabilities = {} }, -- modify default LSP client settings such as capabilities
     },
-    commands = {
-      HarperStart = {
-        function() vim.lsp.enable "harper_ls" end,
-        desc = "Start Grammar check using HarperLS",
-      },
-      HarperStop = {
-        function() vim.lsp.enable("harper_ls", false) end,
-        desc = "Stop Harper language server",
-      },
-    },
-
     -- customize how language servers are attached
     handlers = {
       -- a function with the key `*` modifies the default handler, functions takes the server name as the parameter
@@ -171,24 +116,6 @@ return {
         ["gD"] = {
           function() require("snacks").picker.lsp_declarations() end,
           desc = "Goto Declarations",
-        },
-        ["<Leader>us"] = {
-          function()
-            local astrocore_toggles = require "astrocore.toggles"
-
-            -- Toggle spell check (existing)
-            astrocore_toggles.spell()
-
-            -- Check the new state of spell option in current window
-            if vim.wo.spell then
-              vim.lsp.enable "harper_ls"
-              print "HarperLS & Spellcheck Enabled"
-            else
-              vim.lsp.enable("harper_ls", false)
-              print "HarperLS & Spellcheck Disabled"
-            end
-          end,
-          desc = "Toggle spellcheck & HarperLS",
         },
       },
     },
