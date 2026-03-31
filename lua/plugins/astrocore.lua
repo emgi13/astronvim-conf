@@ -58,18 +58,6 @@ return {
         ui_notifications_enabled = true, -- disable notifications when toggling UI elements
         resession_enabled = false, -- enable experimental resession.nvim session management (will be default in AstroNvim v4)
         winbar_enabled = true,
-        clipboard = {
-          name = "Win32Yank",
-          copy = {
-            ["+"] = "win32yank.exe -i --crlf",
-            ["*"] = "win32yank.exe -i --crlf",
-          },
-          paste = {
-            ["+"] = "win32yank.exe -o --lf",
-            ["*"] = "win32yank.exe -o --lf",
-          },
-          cache_enabled = 0,
-        },
       },
     },
     -- Mappings can be configured through AstroCore as well.
