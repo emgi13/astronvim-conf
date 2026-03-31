@@ -19,9 +19,15 @@ return {
         ["O"] = { "O<cmd>AutolistNewBulletBefore<cr>" },
         ["<CR>"] = { "<cmd>AutolistToggleCheckbox<cr>" },
         ["<C-r>"] = { "<cmd>AutolistRecalculate<cr>" },
-        ["<leader>A"] = { desc = "Autolist" },
-        ["<leader>An"] = { function() require("autolist").cycle_next_dr { expr = true } end, desc = "Next list type" },
-        ["<leader>Ap"] = { function() require("autolist").cycle_prev_dr { expr = true } end, desc = "Prev list type" },
+        ["<LocalLeader>A"] = { desc = "Autolist" },
+        ["<LocalLeader>An"] = {
+          function() require("autolist").cycle_next_dr { expr = true } end,
+          desc = "Next list type",
+        },
+        ["<LocalLeader>Ap"] = {
+          function() require("autolist").cycle_prev_dr { expr = true } end,
+          desc = "Prev list type",
+        },
         [">>"] = { ">><cmd>AutolistRecalculate<cr>" },
         ["<<"] = { "<<<cmd>AutolistRecalculate<cr>" },
         ["dd"] = { "dd<cmd>AutolistRecalculate<cr>" },

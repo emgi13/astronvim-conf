@@ -12,7 +12,7 @@ return {
     features = {
       autopairs = true, -- enable autopairs at start
       cmp = true, -- enable completion at start
-      diagnostics_mode = 3, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
+      diagnostics = { virtual_text = true, virtual_lines = false }, -- diagnostic settings on startup
       highlighturl = true, -- highlight URLs at start
       notifications = true, -- enable notifications at start
     },
@@ -21,18 +21,30 @@ return {
       virtual_text = true,
       underline = true,
       update_in_insert = true,
-      -- signs = false,
     },
+    -- passed to `vim.filetype.add`
+    -- filetypes = {
+    --   -- see `:h vim.filetype.add` for usage
+    --   extension = {
+    --     foo = "fooscript",
+    --   },
+    --   filename = {
+    --     [".foorc"] = "fooscript",
+    --   },
+    --   pattern = {
+    --     [".*/etc/foo/.*"] = "fooscript",
+    --   },
+    -- },
     -- vim options can be configured here
     options = {
       opt = { -- vim.opt.<key>
         relativenumber = true, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
-        signcolumn = "yes", -- sets vim.opt.signcolumn to resize till max
+        signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = true, -- sets vim.opt.wrap
-        foldcolumn = "0", -- Disables foldcolumn
-        scrolloff = 8, -- Scroll offset
+        foldcolumn = "0",
+        scrolloff = 8,
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)

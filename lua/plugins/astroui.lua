@@ -13,17 +13,34 @@ return {
     -- zaibatsu
     -- catppuccin
     colorscheme = "catppuccin-mocha",
+    -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
+    highlights = {
+      init = { -- this table overrides highlights in all themes
+        -- Normal = { bg = "#000000" },
+      },
+      astrodark = { -- a table of overrides/changes when applying the astrotheme theme
+        -- Normal = { bg = "#000000" },
+      },
+    },
     folding = {
       enabled = function(bufnr) return require("astrocore.buffer").is_valid(bufnr) end,
       methods = { "lsp", "treesitter", "indent" },
     },
-    status = {
-      winbar = {
-        enabled = {},
-      },
-    },
+    -- Icons can be configured throughout the interface
+    status = { winbar = { enabled = {} } },
     lazygit = false,
-    -- astroui allows you to easily modify highlight groups easily for any and all colorschemes
-    -- icons can be configured throughout the interface
+    icons = {
+      -- configure the loading of the lsp in the status line
+      LSPLoading1 = "⠋",
+      LSPLoading2 = "⠙",
+      LSPLoading3 = "⠹",
+      LSPLoading4 = "⠸",
+      LSPLoading5 = "⠼",
+      LSPLoading6 = "⠴",
+      LSPLoading7 = "⠦",
+      LSPLoading8 = "⠧",
+      LSPLoading9 = "⠇",
+      LSPLoading10 = "⠏",
+    },
   },
 }

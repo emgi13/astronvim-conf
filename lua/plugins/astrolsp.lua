@@ -3,14 +3,6 @@
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 
-local Snacks = require "snacks"
-
--- Simplified to use Neovim's native LSP management commands.
--- This ensures it uses the AstroLSP config defined below instead of an empty default setup.
-local harper_start = function() vim.cmd "LspStart harper_ls" end
-
-local harper_stop = function() vim.cmd "LspStop harper_ls" end
-
 ---@type LazySpec
 return {
   "AstroNvim/astrolsp",
@@ -24,15 +16,31 @@ return {
     },
     -- customize lsp formatting options
     formatting = {
+      -- control auto formatting on save
       format_on_save = {
-        enabled = true,
-        allow_filetypes = {},
-        ignore_filetypes = {},
+        enabled = true, -- enable or disable format on save globally
+        allow_filetypes = { -- enable format on save for specified filetypes only
+          -- "go",
+        },
+        ignore_filetypes = { -- disable format on save for specified filetypes
+          -- "python",
+        },
       },
-      disabled = {},
-      timeout_ms = 1000,
+      disabled = { -- disable formatting capabilities for the listed language servers
+        -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
+        -- "lua_ls",
+      },
+      timeout_ms = 1000, -- default format timeout
+      -- filter = function(client) -- fully override the default formatting function
+      --   return true
+      -- end
     },
-    servers = {},
+    -- enable servers that you already have installed without mason
+    servers = {
+      -- "pyright"
+    },
+    -- customize language server configuration passed to `vim.lsp.config`
+    -- client specific configuration can also go in `lsp/` in your configuration root (see `:h lsp-config`)
     ---@diagnostic disable: missing-fields
     config = {
       harper_ls = {
@@ -96,50 +104,72 @@ return {
           },
         },
       },
+      -- ["*"] = { capabilities = {} }, -- modify default LSP client settings such as capabilities
     },
     commands = {
       HarperStart = {
-        harper_start,
+        function() vim.lsp.enable "harper_ls" end,
         desc = "Start Grammar check using HarperLS",
       },
       HarperStop = {
-        harper_stop,
+        function() vim.lsp.disable "harper_ls" end,
         desc = "Stop Harper language server",
       },
     },
-    autocmds = {
-      lsp_codelens_refresh = {
-        cond = "textDocument/codeLens",
-        {
-          event = { "InsertLeave", "BufEnter" },
-          desc = "Refresh codelens (buffer)",
-          callback = function(args)
-            if require("astrolsp").config.features.codelens then vim.lsp.codelens.refresh { bufnr = args.buf } end
-          end,
-        },
-      },
+
+    -- customize how language servers are attached
+    handlers = {
+      -- a function with the key `*` modifies the default handler, functions takes the server name as the parameter
+      -- ["*"] = function(server) vim.lsp.enable(server) end
+
+      -- the key is the server that is being setup with `vim.lsp.config`
+      -- rust_analyzer = false, -- setting a handler to false will disable the set up of that language server
     },
+    -- Configure buffer local auto commands to add when attaching a language server
+    autocmds = {
+      -- first key is the `augroup` to add the auto commands to (:h augroup)
+      -- TODO! Verify if this is still required
+      -- lsp_codelens_refresh = {
+      --   -- Optional condition to create/delete auto command group
+      --   -- can either be a string of a client capability or a function of `fun(client, bufnr): boolean`
+      --   -- condition will be resolved for each client on each execution and if it ever fails for all clients,
+      --   -- the auto commands will be deleted for that buffer
+      --   cond = "textDocument/codeLens",
+      --   -- cond = function(client, bufnr) return client.name == "lua_ls" end,
+      --   -- list of auto commands to set
+      --   {
+      --     -- events to trigger
+      --     event = { "InsertLeave", "BufEnter" },
+      --     -- the rest of the autocmd options (:h nvim_create_autocmd)
+      --     desc = "Refresh codelens (buffer)",
+      --     callback = function(args)
+      --       if require("astrolsp").config.features.codelens then vim.lsp.codelens.refresh { bufnr = args.buf } end
+      --     end,
+      --   },
+      -- },
+    },
+    -- mappings to be set up on attaching of a language server
     mappings = {
       n = {
         ["<Leader>lR"] = {
-          function() Snacks.picker.lsp_references() end,
+          function() require("snacks").picker.lsp_references() end,
           desc = "Search references",
           nowait = true,
         },
         ["gd"] = {
-          function() Snacks.picker.lsp_definitions() end,
+          function() require("snacks").picker.lsp_definitions() end,
           desc = "Goto Definition",
         },
         ["gy"] = {
-          function() Snacks.picker.lsp_type_definitions() end,
+          function() require("snacks").picker.lsp_type_definitions() end,
           desc = "Goto T[y]pe Definition",
         },
         ["gI"] = {
-          function() Snacks.picker.lsp_implementations() end,
+          function() require("snacks").picker.lsp_implementations() end,
           desc = "Goto Implementations",
         },
         ["gD"] = {
-          function() Snacks.picker.lsp_declarations() end,
+          function() require("snacks").picker.lsp_declarations() end,
           desc = "Goto Declarations",
         },
         ["<Leader>us"] = {
@@ -151,10 +181,10 @@ return {
 
             -- Check the new state of spell option in current window
             if vim.wo.spell then
-              harper_start()
+              vim.lsp.enable "harper_ls"
               print "HarperLS & Spellcheck Enabled"
             else
-              harper_stop()
+              vim.lsp.disable "harper_ls"
               print "HarperLS & Spellcheck Disabled"
             end
           end,
@@ -162,6 +192,11 @@ return {
         },
       },
     },
-    on_attach = function(_client, _bufnr) end,
+    -- A custom `on_attach` function to be run after the default `on_attach` function
+    -- takes two parameters `client` and `bufnr`  (`:h lsp-attach`)
+    on_attach = function(client, bufnr)
+      -- this would disable semanticTokensProvider for all clients
+      -- client.server_capabilities.semanticTokensProvider = nil
+    end,
   },
 }
