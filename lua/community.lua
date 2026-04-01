@@ -4,7 +4,7 @@
 
 ---@type LazySpec[]
 return {
-  "emgi13/astrocommunity",
+  "emgixiii/astrocommunity",
 
   -- UI / General tools
   { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
@@ -35,7 +35,9 @@ return {
   { import = "astrocommunity.pack.lua", ft = "lua" },
   { import = "astrocommunity.pack.markdown", ft = "markdown" },
   { import = "astrocommunity.pack.mdx", ft = "mdx" },
-  { import = "astrocommunity.pack.python-ruff", ft = "python" },
+  { import = "astrocommunity.pack.python.base", ft = "python" },
+  { import = "astrocommunity.pack.python.basedpyright", ft = "python" },
+  { import = "astrocommunity.pack.python.ruff", ft = "python" },
   { import = "astrocommunity.pack.rust", ft = "rust" },
   {
     import = "astrocommunity.pack.typescript-all-in-one",

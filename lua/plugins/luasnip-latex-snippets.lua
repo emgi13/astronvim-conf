@@ -1,5 +1,5 @@
 return {
-  "emgi13/luasnip-latex-snippets.nvim",
+  "emgixiii/luasnip-latex-snippets.nvim",
   ft = { "markdown", "markdown.mdx", "tex" },
   dependencies = { "L3MON4D3/LuaSnip" },
   config = function()
