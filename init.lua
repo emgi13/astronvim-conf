@@ -9,12 +9,7 @@ end
 -- This file doesn't necessarily need to be touched, BE CAUTIOUS editing this file and proceed at your own risk.
 local lazypath = vim.env.LAZY or vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
-local is_wsl = vim.uv.os_uname().release:lower():find "microsoft"
-if is_wsl then
-  vim.g.node_host_prog = "/home/linuxbrew/.linuxbrew/bin/neovim-node-host"
-  vim.g.ruby_host_prog = "/home/linuxbrew/.linuxbrew/lib/ruby/gems/3.4.0/bin/neovim-ruby-host"
-  vim.g.perl_host_prog = "PERL5LIB=/home/emgixiii/perl5/lib/perl5 /usr/bin/perl"
-end
+require "env_setup"
 
 if not (vim.env.LAZY or (vim.uv or vim.loop).fs_stat(lazypath)) then
   -- stylua: ignore
