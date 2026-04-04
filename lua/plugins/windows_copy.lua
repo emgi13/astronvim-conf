@@ -1,4 +1,3 @@
-if true then return {} end
 local is_wsl = vim.uv.os_uname().release:lower():find "microsoft"
 if not is_wsl then return {} end
 
