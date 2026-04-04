@@ -17,7 +17,7 @@ return {
       n = {
         ["o"] = { "o<cmd>AutolistNewBullet<cr>" },
         ["O"] = { "O<cmd>AutolistNewBulletBefore<cr>" },
-        ["<CR>"] = { "<cmd>AutolistToggleCheckbox<cr>" },
+        ["<LocalLeader><CR>"] = { "<cmd>AutolistToggleCheckbox<cr>" },
         ["<C-r>"] = { "<cmd>AutolistRecalculate<cr>" },
         ["<LocalLeader>A"] = { desc = "Autolist" },
         ["<LocalLeader>An"] = {
