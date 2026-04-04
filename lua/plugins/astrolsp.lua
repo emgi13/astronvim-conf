@@ -44,6 +44,23 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- ["*"] = { capabilities = {} }, -- modify default LSP client settings such as capabilities
+      texlab = {
+        settings = {
+          texlab = {
+            latexFormatter = "tex-fmt",
+            bibtexFormatter = "tex-fmt",
+          },
+        },
+      },
+      basedpyright = {
+        settings = {
+          basedpyright = {
+            analysis = {
+              diagnosticMode = "openFilesOnly",
+            },
+          },
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {
